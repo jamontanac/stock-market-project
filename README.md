@@ -1,2 +1,3 @@
-# stock-market-project
-This repo contains information related with the course of stock-market-analytics https://github.com/DataTalksClub/stock-markets-analytics-zoomcamp
+# Stock-Market-Prediction
+This repository contains code for stock market management using python. It includes data collection, preprocessing, and prediction using machine learning models.
+
