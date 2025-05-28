@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/kynan/nbstripout
-    rev: master # or specific tag/hash
+    rev: 0.8.1
     hooks:
     -   id: nbstripout
         files: \.ipynb$
@@ -67,6 +67,8 @@ repos:
     - id: check-merge-conflict
     - id: check-json
     - id: pretty-format-json
+      exclude_types:
+        - jupyter
       args: [--autofix]
     - id: check-yaml
     - id: check-added-large-files

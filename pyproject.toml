@@ -115,4 +115,3 @@ build-backend = "hatchling.build"
 packages = [
     { include = "src/stock_market" }
 ]
-
