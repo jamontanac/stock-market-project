@@ -1,14 +1,18 @@
 [project]
 name = "stock_market"
 authors = [
-    { name = "Jose Alejandro Montana" },
-    { email = "josealejandromontanac@gmail.com" }
+    { name = "Jose Alejandro Montana" , email = "josealejandromontanac@gmail.com" }
 ]
 version = "0.1.0"
 description = "Project for stock market analysis and prediction"
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "numpy>=2.2.6",
+    "pandas>=2.2.3",
+    "plotly>=6.1.2",
+    "yfinance>=0.2.61",
+]
 [dependency-groups]
 dev = [
     "black>=25.1.0",
