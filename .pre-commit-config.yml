@@ -1,4 +1,9 @@
 repos:
+  - repo: https://github.com/kynan/nbstripout
+    rev: master # or specific tag/hash
+    hooks:
+    -   id: nbstripout
+        files: \.ipynb$
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.11.10
     hooks:
