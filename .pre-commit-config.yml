@@ -1,0 +1,70 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.10
+    hooks:
+      - id: ruff-check
+        args: [--fix]
+        exclude: ^notebooks/
+      - id: ruff-format
+        exclude: ^notebooks/
+  - repo: local
+    hooks:
+      - id: black
+        name: Black
+        entry: uv run black
+        types: [python]
+        exclude: ^notebooks/
+        language: system
+      - id: flake8
+        name: Flake8
+        entry: uv run flake8
+        types: [python]
+        exclude: notebooks
+        language: system
+      - id: isort
+        name: Isort
+        entry: uv run isort
+        types: [python]
+        language: system
+        exclude: ^notebooks/
+      - id: pydocstyle
+        name: Pydocstyle
+        entry: uv run pydocstyle
+        types: [python]
+        language: system
+        exclude: notebooks
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.7.4
+    hooks:
+      - id: uv-lock
+      - id: uv-export
+
+  - repo: https://github.com/pycqa/pylint
+    rev: v3.0.3
+    hooks:
+      - id: pylint
+        name: pylint
+        entry: pylint
+        language: system
+        types: [python]
+        args:
+          [
+          "-rn", # Only display messages
+          "-sn", # Don't display the score
+          "--rcfile=.pylintrc", # Link to the pylint config file
+        ]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: 'v4.4.0'
+    hooks:
+    - id: check-ast
+    - id: end-of-file-fixer
+    - id: trailing-whitespace
+    - id: check-merge-conflict
+    - id: check-json
+    - id: pretty-format-json
+      args: [--autofix]
+    - id: check-yaml
+    - id: check-added-large-files
+      args: [--maxkb=1000]
+    - id: check-xml
+    - id: check-toml
